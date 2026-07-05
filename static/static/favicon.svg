@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" role="img" aria-label="Durar AI">
+  <rect width="512" height="512" rx="112" fill="#123BA4"/>
+  <path fill="#fff" d="M132 116h116c91 0 152 55 152 140s-61 140-152 140H132V116zm112 218c48 0 78-29 78-78s-30-78-78-78h-36v156h36z"/>
+  <circle cx="384" cy="128" r="26" fill="#D4A72C"/>
+</svg>
