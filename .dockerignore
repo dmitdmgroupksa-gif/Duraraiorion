@@ -1,110 +1,20 @@
-# Version control
-.git
-.gitignore
-.gitattributes
 .github
-
-# IDE
-.vscode
-.idea
-*.swp
-*.swo
-*~
-
-# Dependencies
+.DS_Store
+docs
+kubernetes
 node_modules
-**/node_modules
-.svelte-kit
-
-# Build outputs
-dist
-build
-coverage
+/.svelte-kit
 /package
-
-# Python artifacts
-__pycache__
-*.pyc
-*.pyo
-*.egg-info
-*.egg
-.venv
-venv
-.ropeproject
-
-# Data and cache
-backend/data
-data
-cache
-uploads
-**/.cache
-
-# Environment
 .env
 .env.*
-.env.local
-.env.example
-
-# Database
-*.sqlite*
-*.db
-*.sqlite3
-
-# Archives
-*.tar
-*.zip
-*.gz
-
-# Logs
-*.log
-
-# OS files
-.DS_Store
-Thumbs.db
-
-# Documentation
-docs
-CODE_OF_CONDUCT.md
-CONTRIBUTOR_LICENSE_AGREEMENT
-LICENSE_HISTORY
-LICENSE_NOTICE
-TROUBLESHOOTING.md
-
-# Config/lint (only lint/formatting configs, NOT build configs)
-.eslintrc.cjs
-.eslintignore
-.prettierrc
-.prettierignore
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-
-# Docker
-docker-compose*.yaml
-docker-compose*.yml
-Dockerfile
-.dockerignore
-docker-*.sh
-docker-cleanup.sh
-docker-run.sh
-docker-update-models.sh
-
-test
+__pycache__
+.idea
+venv
 _old
+uploads
+.ipynb_checkpoints
+**/*.db
 _test
-*.md
-
-# Kubernetes
-kubernetes
-
-# Python specific
-hatch_build.py
-pyproject.toml
-uv.lock
-dev.sh
-start_windows.bat
-contribution_stats.py
-.pre-commit-config.yaml
-Makefile
-i18next-parser.config.ts
-banner.png
-demo.png
+backend/data/*
