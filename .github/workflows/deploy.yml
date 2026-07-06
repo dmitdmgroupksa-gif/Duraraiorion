@@ -59,16 +59,20 @@ jobs:
           ssh-keyscan -p ${{ secrets.EC2_PORT }} ${{ secrets.EC2_HOST }} >> ~/.ssh/known_hosts
 
       - name: Deploy to EC2
+        shell: bash
         env:
           GHCR_TOKEN: ${{ secrets.GHCR_TOKEN }}
           REGISTRY: ${{ env.REGISTRY }}
           REPO: ${{ github.repository }}
+          EC2_USER: ${{ secrets.EC2_USER }}
+          EC2_HOST: ${{ secrets.EC2_HOST }}
+          EC2_PORT: ${{ secrets.EC2_PORT }}
         run: |
-          ssh ${{ secrets.EC2_USER }}@${{ secrets.EC2_HOST }} -p ${{ secrets.EC2_PORT }} << REMOTE
-            echo "$GHCR_TOKEN" | docker login "$REGISTRY" -u dmitdmgroupksa-gif --password-stdin
-            cd /home/ubuntu/Duraraiorion
-            git pull "https://dmitdmgroupksa-gif:$GHCR_TOKEN@github.com/$REPO.git" master
-            docker compose pull open-webui
-            docker compose up -d --no-deps open-webui
+          ssh "${EC2_USER}@${EC2_HOST}" -p "${EC2_PORT}" "
+            echo ${GHCR_TOKEN} | docker login ${REGISTRY} -u dmitdmgroupksa-gif --password-stdin &&
+            cd /home/ubuntu/Duraraiorion &&
+            git pull https://dmitdmgroupksa-gif:${GHCR_TOKEN}@github.com/${REPO}.git master &&
+            docker compose pull open-webui &&
+            docker compose up -d --no-deps open-webui &&
             docker image prune -f
-REMOTE
+          "
