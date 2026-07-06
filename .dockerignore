@@ -1,20 +1,121 @@
+# Version control
+.git
+.gitignore
+.gitattributes
 .github
-.DS_Store
-docs
-kubernetes
+
+# IDE
+.vscode
+.idea
+*.swp
+*.swo
+*~
+
+# Dependencies
 node_modules
-/.svelte-kit
+**/node_modules
+.svelte-kit
+
+# Build outputs
+dist
+build
+coverage
 /package
+
+# Python artifacts
+__pycache__
+*.pyc
+*.pyo
+*.egg-info
+*.egg
+.venv
+venv
+.ropeproject
+
+# Data and cache
+backend/data
+data
+cache
+uploads
+**/.cache
+
+# Environment
 .env
 .env.*
+.env.local
+.env.example
+
+# Database
+*.sqlite*
+*.db
+*.sqlite3
+
+# Archives
+*.tar
+*.zip
+*.gz
+
+# Logs
+*.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# Documentation
+docs
+README.md
+CHANGELOG.md
+CODE_OF_CONDUCT.md
+CONTRIBUTOR_LICENSE_AGREEMENT
+LICENSE
+LICENSE_HISTORY
+LICENSE_NOTICE
+TROUBLESHOOTING.md
+
+# Config/lint
+.eslintrc.cjs
+.eslintignore
+.prettierrc
+.prettierignore
+.npmrc
+.postcss.config.js
+tailwind.config.js
+svelte.config.js
+tsconfig.json
+vite.config.ts
 vite.config.js.timestamp-*
 vite.config.ts.timestamp-*
-__pycache__
-.idea
-venv
+
+# Docker
+docker-compose*.yaml
+docker-compose*.yml
+Dockerfile
+.dockerignore
+docker-*.sh
+docker-cleanup.sh
+docker-run.sh
+docker-update-models.sh
+
+# Scripts not needed in build
+scripts
+test
 _old
-uploads
-.ipynb_checkpoints
-**/*.db
 _test
-backend/data/*
+*.md
+
+# Kubernetes
+kubernetes
+
+# Python specific
+hatch_build.py
+pyproject.toml
+uv.lock
+dev.sh
+start_windows.bat
+contribution_stats.py
+.pre-commit-config.yaml
+Makefile
+i18next-parser.config.ts
+banner.png
+demo.png

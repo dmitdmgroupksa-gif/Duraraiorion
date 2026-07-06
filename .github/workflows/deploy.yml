@@ -26,6 +26,13 @@ jobs:
           username: ${{ github.actor }}
           password: ${{ secrets.GITHUB_TOKEN }}
 
+      - name: Free disk space on runner
+        run: |
+          docker system prune -af || true
+          docker builder prune -af || true
+          sudo rm -rf /usr/share/dotnet /opt/ghc /usr/local/share/boost /opt/hostedtoolcache/CodeQL 2>/dev/null || true
+          sudo apt-get clean || true
+
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v3
 
@@ -43,6 +50,8 @@ jobs:
         with:
           context: .
           push: true
+          build-args: |
+            USE_SLIM=true
           tags: ${{ steps.meta.outputs.tags }}
           labels: ${{ steps.meta.outputs.labels }}
           cache-from: type=gha
