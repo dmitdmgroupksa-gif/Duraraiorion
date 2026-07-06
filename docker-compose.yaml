@@ -9,10 +9,7 @@ services:
     image: ollama/ollama:${OLLAMA_DOCKER_TAG-latest}
 
   open-webui:
-    build:
-      context: .
-      dockerfile: Dockerfile
-    image: ghcr.io/open-webui/open-webui:${WEBUI_DOCKER_TAG-main}
+    image: ghcr.io/dmitdmgroupksa-gif/duraraiorion:latest
     container_name: open-webui
     volumes:
       - open-webui:/app/backend/data
