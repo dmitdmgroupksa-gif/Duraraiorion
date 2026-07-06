@@ -24,6 +24,7 @@
 
 	import Spinner from '$lib/components/common/Spinner.svelte';
 	import OnBoarding from '$lib/components/OnBoarding.svelte';
+	import SlideShow from '$lib/components/common/SlideShow.svelte';
 	import SensitiveInput from '$lib/components/common/SensitiveInput.svelte';
 	import { redirect } from '@sveltejs/kit';
 
@@ -230,7 +231,10 @@
 />
 
 <div class="w-full h-screen max-h-[100dvh] text-white relative" id="auth-page">
-	<div class="w-full h-full absolute top-0 left-0 bg-white dark:bg-black"></div>
+	<div class="w-full h-full absolute top-0 left-0">
+		<SlideShow duration={5000} />
+		<div class="w-full h-full absolute top-0 left-0 bg-linear-to-t from-20% from-black/70 to-black/40"></div>
+	</div>
 
 	<div class="w-full absolute top-0 left-0 right-0 h-8 drag-region" />
 
